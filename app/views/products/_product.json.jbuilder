@@ -1,0 +1,10 @@
+json.id product.id
+json.name product.name
+json.price product.price
+json.image_url product.image_url
+json.description product.description
+json.created_at product.friendly_created_at
+json.tax product.tax
+json.discounts product.is_discounted?
+json.total product.total
+json.supplier product.supplier
