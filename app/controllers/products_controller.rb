@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
     @products = Product.all
 
       render :index
-    # render json: @products
   end
 
   def show
@@ -16,7 +15,6 @@ class ProductsController < ApplicationController
    @product = Product.create(
   name: params["name"],
   price: params["price"],
-  image_url: params["image_url"],
   description: params["description"]
     )
     if @product.valid?
@@ -32,7 +30,6 @@ class ProductsController < ApplicationController
  @product.update(
   name: params["name"] ||product.name,
   price: params["price"] ||product.price,
-  image_url: params["image_url"] ||product.image_url,
   description: params["description"] || product.description
  )
 
