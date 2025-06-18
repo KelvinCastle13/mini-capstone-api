@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   post "/images" => "images#create"
 
   post "/signup" => "users#create"
+
+  post "/signin" => "sessions#create"
+  delete "/signout" => "sessions#destroy"
 end
