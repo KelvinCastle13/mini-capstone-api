@@ -17,6 +17,10 @@ Rails.application.routes.draw do
 
   post "/signup" => "users#create"
 
-  post "/signin" => "sessions#create"
-  delete "/signout" => "sessions#destroy"
+  post "/login" => "sessions#create"
+  delete "/logout" => "sessions#destroy"
+
+  get "/orders" => "orders#index"
+  get "/orders/:id" => "orders#show"
+  post "/orders" => "oders#create"
 end

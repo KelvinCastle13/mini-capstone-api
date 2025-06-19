@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
 belongs_to :supplier
 has_many :images
+has_many :oders
 
   validates :name, presence: true
   validates :price, numericality: true

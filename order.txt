@@ -1,0 +1,7 @@
+create oder controller
+  - def index or show to view oder with subtotal and total in mind
+  - def create to add product
+  - def update to adjust oder
+  - def destroy to delete item from oder
+
+create association for each order

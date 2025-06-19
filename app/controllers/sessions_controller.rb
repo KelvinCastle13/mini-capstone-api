@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   def create
+    puts "-------------------"
+    pp current_user
+    puts "-------------------"
     user = User.find_by(email: params[:email])
     if user && user.authenticate(params[:password])
       cookie = { value: user.id }
@@ -11,7 +14,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    cookie.delete(:user_id, cookie_settings)
+    cookies.delete(:user_id, cookie_settings)
     render json: { message: "Logged Out Successfully" }
   end
 
