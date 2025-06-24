@@ -13,4 +13,17 @@ render json: { message: "user Created!" }, status: :created
       render json: { error: user.errors.full_messages }, status: :bad_request
     end
   end
+
+  def update
+    @user = User.find(params[:id])
+    @user.update(
+      name: params[:name] || @user.name,
+      email: params[:email] || @user.email,
+      password: params[:password] || @user.password,
+      password_confirmation: params[:password_confirmation] || @user.password_confirmation,
+      admin: params[:update] || @user.admin
+      )
+
+      render json: { message: "User Updated" }
+    end
 end
