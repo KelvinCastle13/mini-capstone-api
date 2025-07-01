@@ -1,18 +1,18 @@
 class ProductsController < ApplicationController
-  before_action :authenticate_admin, except: [ :index, :show ]
+  # before_action :authenticate_admin, except: [ :index, :show ]
   def index
-    puts "--------------"
-    pp current_user
-    puts "--------------"
+    # puts "--------------"
+    # pp current_user
+    # puts "--------------"
     @products = Product.all
 
-      render :index
+      render json: @products.as_json(include: :categories)
   end
 
   def show
     @product = Product.find(params["id"])
 
-    render :show
+    render json: @product.as_json(include: :category)
   end
 
  def create

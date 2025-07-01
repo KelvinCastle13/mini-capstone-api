@@ -66,3 +66,16 @@ Image.create!(url: "https://www.collinsdictionary.com/images/thumb/mug_125689826
 Image.create!(url: "https://techterms.com/img/xl/laptop_586.png", product: Product.find_by(name: "Laptop"))
 Image.create!(url: "https://www.collinsdictionary.com/images/thumb/pen_525053431_250.jpg?version=6.0.84", product: Product.find_by(name: "Pen"))
 Image.create!(url: "https://www.collinsdictionary.com/images/thumb/2151601749_clippers_250.jpg?version=6.0.84", product: Product.find_by(name: "Clippers"))
+
+Category.create!(name: "stationary")
+Category.create!(name: "home appliances")
+
+CategoryProduct.create!(category_id: 1, product_id: 1)
+CategoryProduct.create!(category_id: 2, product_id: 2)
+CategoryProduct.create!(category_id: 2, product_id: 3)
+CategoryProduct.create!(category_id: 2, product_id: 4)
+CategoryProduct.create!(category_id: 1, product_id: 5)
+CategoryProduct.create!(category_id: 1, product_id: 6)
+CategoryProduct.create!(category_id: 1, product_id: 7)
+CategoryProduct.create!(category_id: 1, product_id: 8)
+CategoryProduct.create!(category_id: 2, product_id: 9)
