@@ -1,0 +1,23 @@
+- remove "quantity" from "order"
+- add "payment_info" and "shipping_info" to "user"
+- add "add_to_cart" to "products"
+
+- creat "cart" table
+  - product_id
+  - user_id
+  - quantity
+  - status
+    - carted?, purchased?, removed?
+  - order_id (optional)
+- creat CRUD action for "cart"
+
+- connect all via associations
+  - cart
+    - belongs_to user
+    - belongs_to order
+  - user
+    - has_many carts
+    - has_many orders, through: :cart
+  - order
+    - has_many cart
+    - has_many users, through: :cart

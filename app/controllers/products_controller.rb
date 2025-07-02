@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
     # puts "--------------"
     @products = Product.all
 
-      render json: @products.as_json(include: :categories)
+    render json: @products.as_json(include: :categories)
   end
 
   def show
