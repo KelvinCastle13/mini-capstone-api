@@ -83,3 +83,16 @@ production:
   database: mini_capstone_api_production
   username: mini_capstone_api
   password: <%= ENV["MINI_CAPSTONE_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
+
+cable:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
+
+queue:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
+
+cache:
+  <<: *default
+  url: <%= ENV["DATABASE_URL"] %>
