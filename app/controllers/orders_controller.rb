@@ -2,8 +2,9 @@ class OrdersController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @orders = current_user.orders
-    render json: @orders
+    @orders = current_user.orders.includes(carted_products: :product)
+
+    render :index
   end
 
   def create
